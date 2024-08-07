@@ -7,6 +7,8 @@ import (
 	"strconv"
 )
 
+type envelope map[string]any
+
 func readIdParam(r *http.Request) (int64, error) {
 	id, err := strconv.ParseInt(r.PathValue("id"), 10, 64)
 	if err != nil || id < 1 {
